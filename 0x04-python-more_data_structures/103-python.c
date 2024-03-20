@@ -2,7 +2,7 @@
 #include <Python.h>
 
 /**
- * print_python_bytes - To print bytes information
+ * print_python_bytes - Prints bytes information
  *
  * @p: Python Object
  * Return: no return
@@ -31,7 +31,4 @@ void print_python_bytes(PyObject *p)
 		limit = size + 1;
 
 	printf("  first %ld bytes:", limit);
-
-	for (i = 0; i < limit; i++)
-		if (string[i] >= 0)
 
