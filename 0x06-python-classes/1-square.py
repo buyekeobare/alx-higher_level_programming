@@ -1,9 +1,15 @@
-i#!/usr/bin/python3
-
-"""define a square class"""
+#!/usr/bin/python3
+""" defines a square based on size  """
 
 
 class Square:
-    """square class with a private attribute"""
+    """ square with private instance attribute size """
+
     def __init__(self, size):
+
+        """
+        Args:
+            size: size of square
+        """
+
         self.__size = size
