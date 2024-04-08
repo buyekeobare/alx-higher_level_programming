@@ -4,4 +4,4 @@
 
 class Rectangle:
     """Signifies a rectangle."""
-    passi
+    pass
