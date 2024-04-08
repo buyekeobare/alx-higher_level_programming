@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""Establishes a Rectangle class."""
+
 
 class Rectangle:
-    pass
+    """Signifies a rectangle."""
+    passi
