@@ -6,8 +6,8 @@ Example:
     $ ./101-nqueens.py N
 N must be an integer greater than or equal to 4.
 Attributes:
-    board (list): A list of lists representing the chessboard.
-    solutions (list): A list of lists containing solutions.
+    board (list): List of lists represent the chessboard.
+    solutions (list): List of lists containing solutions.
 Solutions are represented in the format [[e, d], [e, d], [e, d], [e, d]]
 where `e` and `d` represent the row and column, respectively, where a
 queen must be placed on the chessboard.
@@ -16,22 +16,22 @@ import sys
 
 
 def init_board(n):
-    """Initialize an `n`x`n` sized chessboard with 0's."""
+    """Initializes an `n`x`n` sized chessboard with 0's."""
     board = []
-    [board.append([]) for i in range(n)]
-    [row.append(' ') for i in range(n) for row in board]
+    [board.append([]) for j in range(n)]
+    [row.append(' ') for j in range(n) for row in board]
     return (board)
 
 
 def board_deepcopy(board):
-    """Return a deepcopy of a chessboard."""
+    """Returns a deepcopy of a chessboard."""
     if isinstance(board, list):
         return list(map(board_deepcopy, board))
     return (board)
 
 
 def get_solution(board):
-    """Return the list of lists representation of a solved chessboard."""
+    """Returns the list of lists a representation of a solved chessboard."""
     solution = []
     for e in range(len(board)):
         for d in range(len(board)):
@@ -46,9 +46,9 @@ def xout(board, row, col):
     All spots where non-attacking queens can no
     longer be played are X-ed out.
     Args:
-        board (list): The current working chessboard.
-        row (int): The row where a queen was last played.
-        col (int): The column where a queen was last played.
+        board (list): Current working chessboard.
+        row (int): Row where a queen was last played.
+        col (int): Column where a queen was last played.
     """
     # X out all forward spots
     for d in range(col + 1, len(board)):
@@ -93,12 +93,12 @@ def xout(board, row, col):
 
 
 def recursive_solve(board, row, queens, solutions):
-    """Recursively solve an N-queens puzzle.
+    """Recursively solves an N-queens puzzle.
     Args:
-        board (list): The current working chessboard.
-        row (int): The current working row.
-        queens (int): The current number of placed queens.
-        solutions (list): A list of lists of solutions.
+        board (list): Current working chessboard.
+        row (int): Current working row.
+        queens (int): Current number of placed queens.
+        solutions (list): List of lists of solutions.
     Returns:
         solutions
     """
