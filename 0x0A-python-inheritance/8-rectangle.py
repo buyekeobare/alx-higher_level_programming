@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Inheris from baseGeometry."""
+"""This module is 8-rectangle.py."""
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 

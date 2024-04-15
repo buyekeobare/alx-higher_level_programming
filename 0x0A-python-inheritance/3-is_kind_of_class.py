@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Checks if object is an instance of a class
-or an inherited class.
+"""This module is 3-is_kind_of_class.py
 """
 
 

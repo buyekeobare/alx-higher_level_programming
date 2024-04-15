@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a function that adds attributes to objects."""
+"""This module is 101-add_attribute.py."""
 
 
 def add_attribute(obj, att, value):

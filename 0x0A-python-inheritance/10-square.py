@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle subclass Square."""
+"""This module is 10-square.py."""
 Rectangle = __import__('9-rectangle').Rectangle
 
 
