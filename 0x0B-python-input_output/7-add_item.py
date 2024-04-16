@@ -1,19 +1,23 @@
 #!/usr/bin/python3
-""" 
-This module adds all arguments to a Python list
-"""
+""""adds all arguments to a Python list"""
+
 import sys
-import os.path
+from unicodedata import name
 
+if __name__ == "__main__":
+    save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+    load_from_json_file = __import__(
+        '6-load_from_json_file').load_from_json_file
 
-save_file = __import__('7-save_to_json_file').save_to_json_file
-load_file = __import__('8-load_from_json_file').load_from_json_file
+    name = "add_item.json"
+    arg = sys.argv[1:]
 
-my_list = []
-if os.path.exists("add_item.json"):
-    my_list = load_file("add_item.json")
+    try:
+        a = load_from_json_file(name)
 
-for arg in sys.argv[1:]:
-    my_list.append(arg)
+    except FileNotFoundError:
+        a = []
 
-save_file(my_list, "add_item.json")
+    a.extend(arg)
+    save_to_json_file(a, name)
+
