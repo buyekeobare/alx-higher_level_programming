@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is 1-write_file.py"""
+"""This module writes to a file"""
 
 
 def write_file(filename="", text=""):

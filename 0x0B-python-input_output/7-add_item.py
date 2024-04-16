@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ 
-This module is 7-add_item.py
+This module adds all arguments to a Python list
 """
 import sys
 import os.path

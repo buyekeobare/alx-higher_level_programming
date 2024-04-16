@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is 4-from_json_string.py"""
+"""From JSON string to Object"""
 
 
 import json

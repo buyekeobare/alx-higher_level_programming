@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is 6-load_from_json_file.py"""
+"""This module creates object from a JSON file"""
 import json
 
 

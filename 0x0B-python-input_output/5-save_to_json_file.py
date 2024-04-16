@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is 5-save_to_json_file.py"""
+"""This module saves Object to a file"""
 import json
 
 

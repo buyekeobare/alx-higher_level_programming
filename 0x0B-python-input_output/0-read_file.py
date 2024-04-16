@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-"""Read from a file"""
+"""This modules reads from a  file"""
 
 
 def read_file(filename=""):

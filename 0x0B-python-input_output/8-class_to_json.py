@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module is 8-class_to_json.py"""
+"""This is class to JSON module"""
 
 
 def class_to_json(obj):
