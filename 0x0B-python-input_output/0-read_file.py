@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""This module is 0-read_file.py""
+
+"""Read from a file"""
 
 
 def read_file(filename=""):
-    """Prints the contents of a UTF8 text file"""
-    with open(filename, encoding="utf-8") as f:
-        print(f.read(), end="")
+    """Reads text from a file and prints to stdout"""
+    with open(filename) as file:
+        content = file.read()
+    print(content, end="")
