@@ -1,14 +1,14 @@
 #!/usr/bin/python3
 
-"""Write a Child class Rectangle"""
+"""class Rectangle that implements Base."""
 
 from models.base import Base
 
 
 class Rectangle(Base):
     """
-    A subclass of class Base
-    Class Rectangle inherits from Base
+    Subclass of class Base
+    class Rectangle inherits from Base
     Private instance attributes, each with its own public getter and setter:
     __width -> width
     __height -> height
@@ -17,7 +17,7 @@ class Rectangle(Base):
 
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialize instances for class rectangle"""
+        """Initializes the instances for class Rectangle"""
         self.width = width
         self.height = height
         self.x = x
@@ -26,12 +26,15 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Retrive the attribute"""
+        """getter for __width
+            Returns: width"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setting and validating width"""
+        """setter for width.
+            Args:
+                value (int): value to be set."""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -40,12 +43,15 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Retrive height"""
+        """getter for height
+            Returns: height"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """setting and validating height"""
+        """setter for height
+            Args:
+                value (int): value to be set"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -54,12 +60,15 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Retrieve x"""
+        """getter for x.
+            Returns: x"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """setting and validating x"""
+        """setter for x.
+            Args:
+                value (int): value to be set."""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -68,12 +77,15 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Retrieve y"""
+        """getter for y
+            Returns: y"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """setting and validating y"""
+        """setter for y
+            Args:
+                value (int): value to be set."""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -81,11 +93,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Get area of the Rectangle"""
+        """returns the area of the class Rectangle instance"""
         return self.__width * self.__height
 
     def display(self):
-        """print # to the stdout"""
+        """prints to stdout the class Rectangle instance with '#'"""
         for _ in range(self.__y):
             print()
         for i in range(self.__height):

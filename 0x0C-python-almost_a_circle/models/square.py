@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 
-"""Write a child class Square"""
+"""class Square that implements class Rectangle"""
 
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """
-    A subclass of class Rectangle
+    Subclass of class Rectangle
     args:
         size: size
         x: position
@@ -20,22 +20,22 @@ class Square(Rectangle):
         self.size = size
 
     def __str__(self):
-        """Returns a string representation of a square instance"""
+        """Returns a str repr of a square instance."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
 
     @property
     def size(self):
-        """Retrieve attribute from class Rectangle"""
+        """Retrieves attributes from class Rectangle"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """validation from class Rectangle"""
+        """validation from class Rectangle."""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """assigns an argument to each attribute"""
+        """assigns an arg to each attribute."""
         if len(args):
             for i, a in enumerate(args):
                 if i == 0:
@@ -57,7 +57,7 @@ class Square(Rectangle):
                 self.y = kwargs["y"]
 
     def to_dictionary(self):
-        """Returns dict representation of a Rectangle"""
+        """Returns dictionary repr of a Rectangle"""
         return {
             "id": self.id,
             "x": self.x,
