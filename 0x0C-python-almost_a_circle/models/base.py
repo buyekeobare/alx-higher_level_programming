@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" My first clase
-Base
+""" My first class Base
 """
 
 
@@ -11,14 +10,17 @@ import turtle
 
 
 class Base:
-    """ instantiation of the Base class
+    """ Represents the class Base.
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
     """
 
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ The base class constructor
-        method
+        """ Initialize a base instance
+        Args:
+            id (int): The identity of the new Base.
         """
         self.id = id
         if id is not None:
@@ -29,7 +31,9 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ returns the json rep of list_dictionaries
+        """ Return the JSON representation of a list of dicts.
+        Args:
+            list_dictionaries (list): A list of dictionaries.
         """
         if list_dictionaries is None or len(list_dictionaries) == []:
             return "[]"
@@ -37,7 +41,9 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """ writes json string rep to file
+        """ writes the JSON str representation of list_objs to a file.
+        Args:
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as f:
@@ -49,7 +55,13 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ returns a list of json string rep"""
+        """ Returns the list of the JSON str representation json_string
+        Args:
+            json_string (str): A JSON string representation
+            of a list of dictionaries.
+        Returns:
+            If json_string is None or empty - an empty list.
+            Otherwise - the Python list represented by json_string."""
 
         if json_string is None or json_string == '[]':
             return []
@@ -57,8 +69,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ returns an instance with all attributes
-        already set
+        """ Return an instance from a dictionary of attributes.
+        Args:
+            **dictionary (dict): Key/value pairs of attributes to initialize.
         """
 
         if cls.__name__ == "Rectangle":
@@ -70,7 +83,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """ returns a list of instances
+        """ Reads from `<cls.__name__>.json`.
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
         """
 
         filename = str(cls.__name__) + ".json"
@@ -83,8 +99,9 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """ class methods that serializes and
-        deserializes in CSV
+        """ Saves a list of objects to a file.
+        Args:
+            list_objs (list): A list of inherited Base instances.
         """
 
         filename = cls.__name__ + ".csv"
