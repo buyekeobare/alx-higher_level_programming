@@ -1,17 +1,8 @@
 #!/usr/bin/node
 
 const process = require('process');
-const firstArg = process.argv[2];
-const size = parseInt(firstArg);
-
-if (!isNaN(size)) {
-  if (size > 0) {
-    for (let i = 0; i < size; i++) {
-#!/usr/bin/node
-
-const process = require('process');
-const firstArg = process.argv[2];
-const size = parseInt(firstArg);
+const arg_one = process.argv[2];
+const size = parseInt(arg_one);
 
 if (!isNaN(size)) {
   if (size > 0) {

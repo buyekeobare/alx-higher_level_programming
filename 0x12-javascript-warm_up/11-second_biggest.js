@@ -6,8 +6,8 @@ const args = process.argv;
 if (isNaN(args[2]) || isNaN(args[3])) {
   console.log('0');
 } else {
-  const array = args.map(Number);
-  array.slice(2, args.length);
-  array.sort((a, b) => a - b);
-  console.log(array[array.length - 2]);
+  const myArray = args.map(Number);
+  myArray.slice(2, args.length);
+  myArray.sort((a, b) => a - b);
+  console.log(myArray[myArray.length - 2]);
 }

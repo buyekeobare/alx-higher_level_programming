@@ -2,9 +2,9 @@
 
 const process = require('process');
 
-const valueArgs = process.argv;
-if (valueArgs[2]) {
-  console.log(valueArgs[2]);
+const value_args = process.argv;
+if (value_args[2]) {
+  console.log(value_args[2]);
 } else {
   console.log('No argument');
 }

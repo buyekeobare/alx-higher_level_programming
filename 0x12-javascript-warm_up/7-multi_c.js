@@ -1,9 +1,9 @@
 #!/usr/bin/node
 
 const process = require('process');
-const firstArg = process.argv[2];
+const arg_one = process.argv[2];
 
-const x = parseInt(firstArg);
+const x = parseInt(arg_one);
 
 if (!isNaN(x)) {
   for (let i = 0; i < x; i++) {

@@ -2,6 +2,6 @@
 
 const process = require('process');
 
-const firstArg = process.argv;
-const secondArg = process.argv;
-console.log(firstArg[2] + ' is ' + secondArg[3]);
+const arg_one = process.argv;
+const arg_two = process.argv;
+console.log(arg_one[2] + ' is ' + arg_two[3]);

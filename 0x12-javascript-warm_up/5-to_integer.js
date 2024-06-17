@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
 const process = require('process');
-const firstArg = process.argv[2];
-const convertedFirstArg = parseInt(firstArg);
+const argOne = process.argv[2];
+const convertedArgOne = parseInt(argOne);
 
-if (!isNaN(convertedFirstArg)) {
-  console.log('My number:', convertedFirstArg);
+if (!isNaN(convertedArgOne)) {
+  console.log('My number:', convertedArgOne);
 } else {
   console.log('Not a number');
 }
