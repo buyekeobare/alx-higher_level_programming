@@ -1,17 +1,19 @@
 #!/usr/bin/node
-const x = process.argv[2];
 
-if (!parseInt(x)) {
-  console.log('Missing size');
-} else {
-  for (let i = 0; i < x; i++) {
-    let y = 0;
-    let myVar = '';
+const process = require('process');
+const oneArg = process.argv[2];
+const size = parseInt(oneArg);
 
-    while (y < x) {
-      myVar = myVar + 'X';
-      y++;
+if (!isNaN(size)) {
+  if (size > 0) {
+    for (let i = 0; i < size; i++) {
+      let row = '';
+      for (let j = 0; j < size; j++) {
+        row += 'X';
+      }
+      console.log(row);
     }
-    console.log(myVar);
   }
+} else {
+  console.log('Missing size');
 }
