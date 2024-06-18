@@ -1,18 +1,20 @@
 #!/usr/bin/node
 
-module.exports = class Rectangle {
-  constructor (w, h) {
-    if (h > 0 && w > 0) {
-      this.width = w;
-      this.height = h;
-    }
+const Rectangle = require('./5-square');
+
+module.exports = class Square extends Rectangle {
+  constructor (size) {
+    super(size, size);
   }
 
-  print () {
-    for (let n = 0; n < this.height; n++) {
+  charPrint (c) {
+    if (c === undefined) {
+      c = 'X';
+    }
+    for (let n = 0; n < this.width; n++) {
       let row = '';
-      for (let m = 0; m < this.width; m++) {
-        row += 'X';
+      for (let m = 0; m < this.height; m++) {
+        row += c;
       }
       console.log(row);
     }
