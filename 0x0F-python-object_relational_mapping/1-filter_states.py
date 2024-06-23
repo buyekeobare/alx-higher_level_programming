@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This miodule that connects python script to a database.
+This module connects python script to a database.
 This script lists all states with a name starting with N.
 Script should take 3 arguments:
 mysql username, mysql password and database name
