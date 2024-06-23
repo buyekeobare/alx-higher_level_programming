@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """
 This module connects a python script to a database.
-script should take 3 arguments:
-mysql username, mysql password and database name
-script should connect to a MySQL server running on localhost at port 3306
 """
 
 import MySQLdb as db

@@ -2,10 +2,6 @@
 
 """
 This module connects python script to a database.
-This script lists all states with a name starting with N.
-Script should take 3 arguments:
-mysql username, mysql password and database name
-script should connect to a MySQL server running on localhost at port 3306
 """
 
 import MySQLdb as db
