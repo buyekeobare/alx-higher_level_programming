@@ -22,5 +22,3 @@ if __name__ == '__main__':
         State.name.like('%a%')
     ).delete(synchronize_session=False)
     session.commit()
-
-    session.close()
