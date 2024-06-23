@@ -11,25 +11,15 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
-    my_db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=sys.argv[1],
-        passwd=sys.argv[2],
-        db=sys.argv[3]
-        )
+    my_db_connect = my_db.connect(host="localhost", port=3306,
+                            user=argv[1], passwd=argv[2], db=argv[3])
+    my_db_cursor = my_db_connect.cursor()
 
-    my_cursor = my_db.cursor()
+    my_db_cursor.execute(
+        "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+                ORDER BY states.id ASC")
 
-    filter_by = 'N%'
+    rows_selected = my_db_cursor.fetchall()
 
-    my_cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY %s
-            ORDER BY id ASC""", (filter_by,))
-
-    rows = my_cursor.fetchall()
-
-    for row in rows:
-        print(row)
-
-    my_cursor.close()
-    my_db.close()
+    for row in rows_selected:
+        print(row) 
