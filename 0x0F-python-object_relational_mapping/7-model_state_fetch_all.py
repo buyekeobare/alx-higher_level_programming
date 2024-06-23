@@ -5,10 +5,10 @@ This module connects python script to a database
 """
 
 
-from sys import argv
-from model_state import State, Base
+import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_state import State
 
 if __name__ == "__main__":
 
