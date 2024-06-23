@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Module that connects python script to a database.
+This miodule that connects python script to a database.
 This script lists all states with a name starting with N.
 Script should take 3 arguments:
 mysql username, mysql password and database name
@@ -13,15 +13,15 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    db_connect = db.connect(host="localhost", port=3306,
+    my_db = db.connect(host="localhost", port=3306,
                             user=argv[1], passwd=argv[2], db=argv[3])
-    db_cursor = db_connect.cursor()
+    my_cursor = my_db.cursor()
 
-    db_cursor.execute(
+    my_cursor.execute(
         "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
                 ORDER BY states.id ASC")
 
-    rows_selected = db_cursor.fetchall()
+    rows_selected = my_cursor.fetchall()
 
     for row in rows_selected:
         print(row)
