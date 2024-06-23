@@ -20,3 +20,5 @@ if __name__ == '__main__':
     up_state = session.query(State).filter_by(id=2).first()
     up_state.name = 'New Mexico'
     session.commit()
+
+    session.close()
