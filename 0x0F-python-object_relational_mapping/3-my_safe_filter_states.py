@@ -6,10 +6,10 @@ mysql username, mysql password and database name
 script should connect to a MySQL server running on localhost at port 3306
 """
 
-if __name__ == "__main__":
+import MySQLdb as db
+from sys import argv
 
-    import MySQLdb
-    from sys import argv
+if __name__ == "__main__":
 
     my_db = db.connect(host="localhost", port=3306,
                             user=argv[1], passwd=argv[2], db=argv[3])
