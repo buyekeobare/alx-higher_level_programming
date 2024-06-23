@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-Module that connects a python script to a database
+This module connects a python script to a database.
+script should take 3 arguments:
+mysql username, mysql password and database name
+script should connect to a MySQL server running on localhost at port 3306
 """
 
 if __name__ == "__main__":
@@ -8,35 +11,15 @@ if __name__ == "__main__":
     import MySQLdb
     from sys import argv
 
-    # Connect database using command-line arguments
-    my_db = MySQLdb.connect(
-        host='localhost',
-        user=argv[1],
-        password=argv[2],
-        db=argv[3],
-        port=3306
-        )
+    my_db = db.connect(host="localhost", port=3306,
+                            user=argv[1], passwd=argv[2], db=argv[3])
 
-    # Create cursor obj to interact with database
     my_cursor = my_db.cursor()
-
-    # Execute a SELECT query to fetch data
     my_cursor.execute(
-        """
-        SELECT * FROM states  WHERE name LIKE BINARY '{}'
-        ORDER BY states.id ASC
-        """.format(argv[4])
-        )
+        "SELECT * FROM states WHERE name LIKE \
+                    BINARY %(name)s ORDER BY states.id ASC", {'name': argv[4]})
 
-    # fetch all the data returned by the query
-    my_data = my_cursor.fetchall()
+    rows_selected = my_cursor.fetchall()
 
-    # Iterate through the fetched data and print each row
-    for row in my_data:
+    for row in rows_selected:
         print(row)
-
-    # Close all cursors
-    my_cursor.close()
-
-    # Close all databases
-    my_db.close()
