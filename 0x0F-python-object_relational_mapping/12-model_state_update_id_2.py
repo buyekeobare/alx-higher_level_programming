@@ -4,7 +4,6 @@
 This module connects python script to a database
 """
 
-
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -18,6 +17,6 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).filter_by(id=2).first()
-    state.name = 'New Mexico'
+    up_state = session.query(State).filter_by(id=2).first()
+    up_state.name = 'New Mexico'
     session.commit()
