@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+
+"""
+This module connects python script to a database
+"""
+
 from sys import argv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
