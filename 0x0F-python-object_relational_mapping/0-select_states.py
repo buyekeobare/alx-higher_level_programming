@@ -7,19 +7,23 @@ mysql username, mysql password and database name
 script should connect to a MySQL server running on localhost at port 3306
 """
 
-import MySQLdb
-from sys import argv
-
-if __name__ == '__main__':
-    
+if __name__ == "__main__":
+    import sys
+    import MySQLdb
     my_db = MySQLdb.connect(
-        host="localhost", user=argv[1], port=3306, passwd=argv[2], db=argv[3])
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
+        )
 
     my_cursor = my_db.cursor()
 
-    my_cursor.execute("SELECT * FROM states")
+    my_cursor.execute("""SELECT * FROM states ORDER BY id ASC""")
 
-    rows_selected = my_cursor.fetchall()
+    rows = my_cursor.fetchall()
 
-    for row in rows_selected:
+    for row in rows:
         print(row)
+
+    my_cursor.close()
+    my_db.close()
