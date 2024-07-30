@@ -1,7 +1,5 @@
 #!/usr/bin/node
-// A script that prints the number of movies 
-// where the character “Wedge Antilles” is present
-
+// A script that prints the number of movies where the character “Wedge Antilles” is present
 const request = require('request');
 const url = process.argv[2];
 const actor = 'https://swapi-api.alx-tools.com/api/people/18/';
